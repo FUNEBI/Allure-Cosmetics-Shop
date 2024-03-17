@@ -1,0 +1,135 @@
+<div class="container scroll-modal mt-5 py-3">
+
+    <nav class="navbar-toggler breadcrumb mt-5" aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-dividers-chevron bg-transparent mt-5 text-center">
+            <li class="breadcrumb-item"><a class="text-decoration-none text-light" [routerLink]="['/']"><b>Home</b></a></li>
+            <li class="breadcrumb-item text-light active" aria-current="page">About Us</li>
+        </ol>
+    </nav>
+    <h2 class="mb-5 text-center">Our Products</h2>
+
+    <div class="row mt-5 mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 px-3 py-3"> 
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptatem architecto accusantium delectus deleniti suscipit ex at dolorum odit distinctio maxime eius laudantium asperiores, fuga tempore, laborum soluta tenetur! Iure!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptatem architecto accusantium delectus deleniti suscipit ex at dolorum odit distinctio maxime eius laudantium asperiores, fuga tempore, laborum soluta tenetur! Iure!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptatem architecto accusantium delectus deleniti suscipit ex at dolorum odit distinctio maxime eius laudantium asperiores, fuga tempore, laborum soluta tenetur! Iure!
+            </p>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 text-center "> 
+            <img src="/assets/images/brushes-6d2ab84631ecd47ced4fa07c47eb37521eb61c5a525965dafaf308f21338aa44.png" alt="brushes" class="img-fluid pt-3" style="height:45vh!important;width:40vw!important;">
+        </div>
+    </div>
+    <h2 class="text-center">Our Strengths</h2>
+    <div class="row mt-5 mb-3">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 px-3 py-3"> 
+            <p>Customer Service</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 71%; background-color: rgb(221, 205, 240);">
+                </div>
+            </div>
+            <p>Delivery Service</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 91%; background-color: rgb(221, 205, 240);">
+                </div>
+            </div>
+            <p>Problem Solving Service</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 40%; background-color: rgb(221, 205, 240);">
+                </div>
+            </div>
+            <p>Data Protection Service</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 100%; background-color: rgb(221, 205, 240);">
+                </div>
+            </div>
+            <p>Product Referral Service</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 80%; background-color: rgb(221, 205, 240);">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 px-3 py-3"> 
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptatem architecto accusantium delectus deleniti suscipit ex at dolorum odit distinctio maxime eius laudantium asperiores, fuga tempore, laborum soluta tenetur! Iure!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptatem architecto accusantium delectus deleniti suscipit ex at dolorum odit distinctio maxime eius laudantium asperiores, fuga tempore, laborum soluta tenetur! Iure!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptatem architecto accusantium delectus deleniti suscipit ex at dolorum odit distinctio maxime eius laudantium asperiores, fuga tempore, laborum soluta tenetur! Iure!
+            </p>
+        </div>
+    </div>
+    <h2>Meet Our Team</h2>
+    <div class="row mt-5 mb-3">
+        <div class="col-lg-4 col-md-6 col-sm-12 my-3 text-center" *ngFor="let comments of usersComments">
+            <img src="{{comments.profile_picture}}" style="height:40vh!important;width:20vw!important;" class="img-fluid rounded-circle" alt="">
+            <p>
+                {{comments.first_name | titlecase}} {{comments.last_name | titlecase}}
+
+            </p>              
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 pt-5 pb-5 px-5">
+            <h2 class="pb-4">SIGN UP NEWSLETTER</h2>
+            <p class="pb-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, fugit sint voluptate quia corporis dolorum dolorem consequatur et a suscipit porro! Tempora aliquid inventore illum quod suscipit odio quasi dolores.
+            </p>
+                <form class="form w-100" [formGroup]="formGroup" novalidate="novalidate" id="add-area-form">
+                    <input type="email"  
+                    name="email" 
+                    formControlName="email"
+                    class="fas form-control form-control-md form-control-solid" placeholder="&#x2709; Enter Your Email">
+                    <button class="btn"><i class="fa-regular fa-paper-plane"></i></button>
+                    <ng-container
+                        [ngTemplateOutlet]="formError"
+                        [ngTemplateOutletContext]="{
+                            validation: 'email',
+                            message: 'Email format is incorrect',
+                            control: formGroup.controls['email']
+                        }"
+                ></ng-container>
+                </form>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-3 px-5 pt-5 pb-5 text-dark" style="background-color: rgb(221, 205, 240);">
+            <p>
+                <img  alt="Logo" style="height:6vw!important;" src="/assets/images/Screenshot_2024-03-10_161909-removebg-preview.png"
+                />
+
+                <span><b> Pamper Yourself, The World Can Wait</b></span>
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
+            </p>
+            <h2>SOCIAL CONNECT</h2>
+            <p>
+                <i class="fa-brands fa-facebook-f"></i> &nbsp;
+                <i class="fa-brands fa-instagram"></i> &nbsp;
+                <i class="fa-brands fa-telegram"></i> &nbsp;
+                <i class="fa-brands fa-twitter"></i> &nbsp;
+                <i class="fa-sharp fa-regular fa-envelope"></i>
+            </p>
+        </div>
+    </div>
+</div>
+<ng-template #formError let-control="control" let-message="message" let-validation="validation">
+    <ng-container *ngIf="control.dirty || control.touched">
+        <div class="fv-plugins-message-container">
+            <div class="fv-help-block text-light">
+                <span role="alert" >
+                    {{ message }}
+                </span>
+            </div>
+        </div>
+    </ng-container>
+  </ng-template>

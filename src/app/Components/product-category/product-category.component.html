@@ -1,0 +1,28 @@
+<div class="container">
+    <nav class="navbar-toggler breadcrumb mt-5 mb-5" aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-dividers-chevron bg-transparent mb-5 text-center">
+            <li class="breadcrumb-item"><a class="text-decoration-none text-light" [routerLink]="['/']"><b>Home</b></a></li>
+            <li class="breadcrumb-item"><a class="text-decoration-none text-light" [routerLink]="['/shop']"><b>Shop</b></a></li>
+            <li class="breadcrumb-item text-light active" aria-current="page">Product Category</li>
+        </ol>
+    </nav>
+    <h2 class="mb-5 text-center">Product Category For {{productCategory | titlecase}}</h2>
+
+    <div class="row mt-5">
+
+        <div class="each-item-cont col-lg-3 col-md-3 col-sm-3 my-3 text-center" *ngFor="let product of productList"> 
+            <a  [routerLink]="['/product-details/',product.id]" class="text-decoration-none text-dark">
+                <img src="{{product.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid mt-4" alt="{{product.name}}">
+                <p class="text-left">{{product.brand | titlecase}}</p>
+                <p class="text-left font-bolder">{{product.name | titlecase}}</p>
+                <p class="text-left">{{product.category | titlecase}}</p>
+                <p class="text-left">{{product.price_sign}} {{product.price | titlecase}}</p>
+              </a>
+              <p class="text-left"><button class="btn shop-btn" (click)="addToCart(product)">Add To Cart</button></p>
+        </div>
+    </div>  
+ </div>
+
+ <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff"[fullScreen]="true">
+    <p style="color: #c266d3"></p>
+</ngx-spinner>

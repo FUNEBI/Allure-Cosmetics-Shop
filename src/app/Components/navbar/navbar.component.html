@@ -1,0 +1,83 @@
+<!-- <nav class="navbar fixed-top  navbar-expand-md mb-5" style="background-color: #000000;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">
+        <div class="toolbar" role="banner">
+            <img  alt="Logo" style="height:3vw!important;" src="/assets/images/Screenshot_2024-03-10_161909-removebg-preview.png"
+            />
+            ALLURE
+        </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>      
+    </button>
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown bg-*">
+          <div ngbDropdown class="d-inline-block">
+            <a class="nav-link text-light" [routerLink]="['/shop']" id="dropdownBasic1" >
+                Shop
+            </a>
+            
+        </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" [routerLink]="['/cart-details/']"> Shopping Cart <i class="fas fa-shopping-cart"></i>{{totalItemsIncart}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" [routerLink]="['/about/']">About Us</a>
+        </li>
+      </ul>     
+    </div>
+  </div>
+</nav>  -->
+
+
+<nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #000000;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-light" href="#">
+      <div class="toolbar font-weight-bold" role="banner">
+          <img  alt="Logo" style="height:3vw!important;" src="/assets/images/Screenshot_2024-03-10_161909-removebg-preview.png"
+          />
+          ALLURE
+      </div>
+  </a>
+    <button
+      (click)="toggleNavbarCollapsing()"
+      class="navbar-toggler bg-light"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      [class.collapse]="navbarCollapsed"
+      class="navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold text-light" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold text-light" [routerLink]="['/shop']">
+            Shop
+        </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold text-light" [routerLink]="['/cart-details/']"> Shopping Cart <i class="fas fa-shopping-cart"></i>{{totalItemsIncart}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light font-weight-bold" [routerLink]="['/about/']">About Us</a>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>

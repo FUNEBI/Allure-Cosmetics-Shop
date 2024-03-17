@@ -1,0 +1,244 @@
+<app-navbar></app-navbar>
+<div class="container-fluid mt-5">
+    <form class="form w-100 pt-5" [formGroup]="formGroup" novalidate="novalidate" id="add-area-form">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6"> 
+              <select 
+              #ref
+                class="form-control form-select"
+                autocomplete="off" 
+                placeholder="Select A Filter Parameter"
+                (change)="getSelectedData($event)"
+              >
+                <option value="" [disabled]="true" selected>Filter By</option>
+                <option value="category"> Category</option>
+                <option value="brands"> Brand</option>
+                <option value="products"> Products</option>
+          </select> 
+        </div>
+        <ng-container *ngIf="ref.value =='brands'">
+          <div class="col-lg-6 col-md-6 col-sm-6"> 
+            <select 
+              #brands
+              class="form-control form-select"
+              autocomplete="off" 
+              placeholder="Select A Brand"
+              (change)="getSelectedData($event)"
+            >
+              <option value="" [disabled]="true" selected>Brands</option>
+              <option value="almay">Almay</option>
+              <option value="alva">Alva</option>
+              <option value="anna sui">Anna sui</option>
+              <option value="annabelle">Annabelle</option>
+              <option value="benefit">Benefit</option>
+              <option value="boosh">Boosh</option>
+              <option value="burt's bees">Burt's bees</option>
+              <option value="c'est moi">C'est Moi</option>
+              <option value="cargo cosmetics">Cargo Cosmetics</option>
+              <option value="china glaze">China Glaze</option>
+              <option value="clinique">Clinique</option>
+              <option value="coastal">Coastal</option>
+              <option value="classic creation">Classic Creation</option>
+              <option value="colourpop">Colourpop</option>
+              <option value="dalish">Dalish</option>
+              <option value="deciem">Deciem</option>
+              <option value="dior">Dior</option>
+              <option value="dr. hauschka">Dr.Hauschka</option>
+              <option value="e.l.f.">E.L.F</option>
+              <option value="essie">Essie</option>
+              <option value="fenty">Fenty</option>
+              <option value="glossier">Glossier</option>
+              <option value="green people">Green People</option>
+              <option value="iman">Iman</option>
+              <option value="l'oreal">L'oreal</option>
+              <option value="lotus cosmetics usa">Lotus Cosmetics USA</option>
+              <option value="maia's mineral galaxy">Maia's Mineral Galaxy</option>
+              <option value="marcelle">Marcelle</option>
+              <option value="marienatie">Marienatie</option>
+              <option value="maybelline">Maybelline</option>
+              <option value="milani">Milani</option>
+              <option value="mineral fusion">Mineral Fusion</option>
+              <option value="misa">Misa</option>
+              <option value="mistura">Mistura</option>
+              <option value="moov">Moov</option>
+              <option value="nudus">Nudus</option>
+              <option value="nyx">NYX</option>
+              <option value="orly">Orly</option>
+              <option value="pacifica">Pacifica</option>
+              <option value="penny lane organics">Penny Lane Organics</option>
+              <option value="physicians formula">Physicians Formula</option>
+              <option value="piggy paint">Piggy Paint</option>
+              <option value="pure anada">Pure Anada</option>
+              <option value="rejuva minerals">Rejuva Minerals</option>
+              <option value="revlon">Revlon</option>
+              <option value="sally b's skin yummies">Sally B's Skin Yummies</option>
+              <option value="salon perfect">Salon Perfect</option>
+              <option value="sante">Sante</option>
+              <option value="sinful colours">Sinful Colours</option>
+              <option value="smashbox">Smashbox</option>
+              <option value="stila">Stila</option>
+              <option value="suncoat">Suncoat</option>
+              <option value="w3llpeople">W3llpeople</option>
+              <option value="wet n wild">Wet n Wild</option>
+              <option value="zorah">Zorah</option>
+              <option value="zorah biocosmetiques">Zorah Biocosmetiques</option>
+            </select> 
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 mt-3">
+            <button class="btn" type="submit" (click)="getProductBrand(brands.value)">Search Brand</button>
+          </div>
+        </ng-container>
+
+      <ng-container *ngIf="ref.value =='products'">
+        <div class="col-lg-6 col-md-6 col-sm-6"> 
+          <select 
+            #products
+            class="form-control form-select"
+            autocomplete="off" 
+            placeholder="Select A Product"
+            (change)="getSelectedData($event)"
+          >
+            <option value="" [disabled]="true" selected>Products</option>
+            <option value="Blush">Blush</option>
+            <option value="Bronzer">Bronzer</option>
+            <option value="Eyebrow">Eyebrow</option>
+            <option value="Eyeliner">Eyeliner</option>
+            <option value="Eyeshadow">Eyeshadow</option>
+            <option value="Foundation">Foundation</option>
+            <option value="Lip liner">Lip liner</option>
+            <option value="Lipstick">Lipstick</option>
+            <option value="Mascara">Mascara</option>
+            <option value="Nail polish">Nail polish</option>  
+          </select> 
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 mt-3">
+          <button class="btn" type="submit" (click)="getProduct(products.value)">Search Product Type</button>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="ref.value  =='category'">
+        <div class="col-lg-6 col-md-6 col-sm-6"> 
+          <select 
+            #category
+            class="form-control form-select"
+            autocomplete="off" 
+            placeholder="Select A Product Category"
+            (change)="getSelectedData($event)"
+          >
+            <option value="" [disabled]="true" selected>Category</option>
+            <option value="Powder">Powder</option>
+            <option value="Cream">Cream</option>
+            <option value="Pencil">Pencil</option>
+            <option value="Liquid">Liquid Foundation</option>
+            <option value="Gel">Gel</option>
+            <option value="Palette">Palette</option>
+            <option value="Concealer">Concealer</option>
+            <option value="Contour">Contour</option>
+            <option value="Bb cc ">BB CC</option>
+            <option value="Mineral">Mineral</option>  
+            <option value="Highlighter">Highlighter</option>
+            <option value="Lipstick">Lipstick</option>
+            <option value="Lip gloss">Lip Gloss</option>
+            <option value="Lip stain">Lip stain</option>
+            <option value="Liquid ">Liquid Lipgloss</option>
+          </select> 
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 mt-3">
+          <button class="btn" type="submit" (click)="getProductCategory(category.value)">
+            Search Category
+          </button>
+        </div>
+      </ng-container>
+      </div>
+    </form>            
+</div>
+
+<ng-container *ngIf="loading===false">
+  <div class="container text-center">
+    <div class="row">
+      <div class="each-item-cont col-lg-3 col-md-3 col-sm-3 my-3 py-3" *ngFor="let product of productsBrand"> 
+        <ng-container *ngIf="product.price < 1">
+          <p style="color: red;">Out Of Stock</p>
+        </ng-container>
+        <a [routerLink]="['/product-details/',product.id]" class="text-decoration-none text-dark">
+        <img src="{{product?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{product.name}}">
+          <p class="text-left">{{product.brand | titlecase}}</p>
+          <p class="text-left font-bolder">{{product.name | titlecase}}</p>
+          <p class="text-left">{{product.category | titlecase}}</p>
+          <p class="text-left">{{product.price_sign}} {{product.price | titlecase}}</p>
+        </a>
+        <p class="text-left">
+          <button class="btn shop-btn" [disabled]="product.price < 1" (click)="addToCart(product)">Add To Cart</button>
+        </p>
+      </div>
+    </div>  
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="productsList !== null && loading === true"  class="mt-5">
+  <div class="container text-center">
+    <div class="row">
+      <div class="each-item-cont col-lg-3 col-md-3 col-sm-3 my-3 py-3" *ngFor="let product of productsList"> 
+        <ng-container *ngIf="product.price < 1">
+          <p style="color: red;">Out Of Stock</p>
+        </ng-container>
+        <a [routerLink]="['/product-details/',product.id]" class="text-decoration-none text-dark">
+        <img src="{{product?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{product.name}}">
+          <p class="text-left">{{product.brand | titlecase}}</p>
+          <p class="text-left font-bolder">{{product.name | titlecase}}</p>
+          <p class="text-left">{{product.category | titlecase}}</p>
+          <p class="text-left">{{product.price_sign}} {{product.price | titlecase}}</p>
+        </a>
+        <p class="text-left">
+          <button class="btn shop-btn" [disabled]="product.price < 1" (click)="addToCart(product)">Add To Cart</button>
+        </p>
+      </div>
+    </div>  
+  </div>
+</ng-container>
+
+<ng-container *ngIf="productCategory !== undefined && loading === true"  class="mt-5">
+  <div class="container text-center">
+    <div class="row">
+      <div class="each-item-cont col-lg-3 col-md-3 col-sm-3 my-3 py-3" *ngFor="let category of productCategory"> 
+        <ng-container *ngIf="category.price < 1">
+          <p style="color: red;">Out Of Stock</p>
+        </ng-container>
+        <a [routerLink]="['/product-details/',category.id]" class="text-decoration-none text-dark">
+        <img src="{{category?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{category.name}}">
+        <p class="text-left">{{category.brand | titlecase}}</p>
+          <p class="text-left font-bolder">{{category.name | titlecase}}</p>
+          <p class="text-left">{{category.category | titlecase}}</p>
+          <p class="text-left">{{category.price_sign}} {{category.price | titlecase}}</p>
+        </a>
+        <p class="text-left"><button class="btn shop-btn" [disabled]="category.price < 1" (click)="addToCart(category)">Add To Cart</button></p>
+      </div>
+    </div> 
+  </div> 
+</ng-container>
+
+<ng-container *ngIf="brands !== undefined && loading === true" class="mt-5">
+  <div class="container text-center">
+    <div class="shop-row row">
+      <div class="each-item-cont col-lg-3 col-md-3 col-sm-3 my-3 py-3" *ngFor="let brand of brands"> 
+        <ng-container *ngIf="brand.price < 1">
+          <p style="color: red;">Out Of Stock</p>
+        </ng-container>
+        <a [routerLink]="['/product-details/',brand.id]" class="text-decoration-none text-dark">
+        <img src="{{brand?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{brand.name}}">
+        <p class="text-left">{{brand.brand | titlecase}}</p>
+          <p class="text-left font-bolder">{{brand.name | titlecase}}</p>
+          <p class="text-left">{{brand.category | titlecase}}</p>
+          <p class="text-left">{{brand.price_sign}} {{brand.price | titlecase}}</p>
+        </a>
+        <p class="text-left"><button class="btn shop-btn" [disabled]="brand.price < 1" (click)="addToCart(brand)">Add To Cart</button></p>
+      </div>
+    </div>
+  </div>  
+</ng-container>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff"[fullScreen]="true">
+    <p style="color: #c266d3"></p>
+</ngx-spinner>
+  
