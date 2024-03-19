@@ -42,7 +42,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
     BrowserModule,
     HttpClientModule, 
     FormsModule, 
-    SweetAlert2Module,
+    SweetAlert2Module.forRoot(),
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     BrowserAnimationsModule,
     ReactiveFormsModule ,
