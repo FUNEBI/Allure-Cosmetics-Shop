@@ -18,3 +18,8 @@
     background-position: 100%;
     color: #c266d3;
 }
+@media only screen and (max-width: 1000px) {
+    .each-item-cont a p{
+        text-align: center !important;
+    } 
+}

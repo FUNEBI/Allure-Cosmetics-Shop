@@ -12,7 +12,7 @@
 
         <div class="each-item-cont col-lg-3 col-md-3 col-sm-3 my-3 text-center" *ngFor="let product of productList"> 
             <a  [routerLink]="['/product-details/',product.id]" class="text-decoration-none text-dark">
-                <img src="{{product.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid mt-4" alt="{{product.name}}">
+                <img src="{{product.api_featured_image}}" style="height:300px !important;width:300px! important;" class="img-fluid mt-4" alt="{{product.name}}">
                 <p class="text-left">{{product.brand | titlecase}}</p>
                 <p class="text-left font-bolder">{{product.name | titlecase}}</p>
                 <p class="text-left">{{product.category | titlecase}}</p>

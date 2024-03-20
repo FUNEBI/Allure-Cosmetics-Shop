@@ -161,13 +161,13 @@
           <p style="color: red;">Out Of Stock</p>
         </ng-container>
         <a [routerLink]="['/product-details/',product.id]" class="text-decoration-none text-dark">
-        <img src="{{product?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{product.name}}">
+        <img src="{{product?.api_featured_image}}" style="height:300px !important;width:300px! important;" class="img-fluid" alt="{{product.name}}">
           <p class="text-left">{{product.brand | titlecase}}</p>
           <p class="text-left font-bolder">{{product.name | titlecase}}</p>
           <p class="text-left">{{product.category | titlecase}}</p>
           <p class="text-left">{{product.price_sign}} {{product.price | titlecase}}</p>
         </a>
-        <p class="text-left">
+        <p class="text-center">
           <button class="btn shop-btn" [disabled]="product.price < 1" (click)="addToCart(product)">Add To Cart</button>
         </p>
       </div>
@@ -184,13 +184,13 @@
           <p style="color: red;">Out Of Stock</p>
         </ng-container>
         <a [routerLink]="['/product-details/',product.id]" class="text-decoration-none text-dark">
-        <img src="{{product?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{product.name}}">
+        <img src="{{product?.api_featured_image}}" style="height:300px !important;width:300px! important;"class="img-fluid" alt="{{product.name}}">
           <p class="text-left">{{product.brand | titlecase}}</p>
           <p class="text-left font-bolder">{{product.name | titlecase}}</p>
           <p class="text-left">{{product.category | titlecase}}</p>
           <p class="text-left">{{product.price_sign}} {{product.price | titlecase}}</p>
         </a>
-        <p class="text-left">
+        <p class="text-center">
           <button class="btn shop-btn" [disabled]="product.price < 1" (click)="addToCart(product)">Add To Cart</button>
         </p>
       </div>
@@ -206,13 +206,13 @@
           <p style="color: red;">Out Of Stock</p>
         </ng-container>
         <a [routerLink]="['/product-details/',category.id]" class="text-decoration-none text-dark">
-        <img src="{{category?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{category.name}}">
+        <img src="{{category?.api_featured_image}}" style="height:300px !important;width:300px! important;" class="img-fluid" alt="{{category.name}}">
         <p class="text-left">{{category.brand | titlecase}}</p>
           <p class="text-left font-bolder">{{category.name | titlecase}}</p>
           <p class="text-left">{{category.category | titlecase}}</p>
           <p class="text-left">{{category.price_sign}} {{category.price | titlecase}}</p>
         </a>
-        <p class="text-left"><button class="btn shop-btn" [disabled]="category.price < 1" (click)="addToCart(category)">Add To Cart</button></p>
+        <p class="text-center"><button class="btn shop-btn" [disabled]="category.price < 1" (click)="addToCart(category)">Add To Cart</button></p>
       </div>
     </div> 
   </div> 
@@ -226,13 +226,13 @@
           <p style="color: red;">Out Of Stock</p>
         </ng-container>
         <a [routerLink]="['/product-details/',brand.id]" class="text-decoration-none text-dark">
-        <img src="{{brand?.api_featured_image}}" style="height:40vh!important;width:25vw!important;" class="img-fluid" alt="{{brand.name}}">
+        <img src="{{brand?.api_featured_image}}" style="height:300px !important;width:300px! important;"class="img-fluid" alt="{{brand.name}}">
         <p class="text-left">{{brand.brand | titlecase}}</p>
           <p class="text-left font-bolder">{{brand.name | titlecase}}</p>
           <p class="text-left">{{brand.category | titlecase}}</p>
           <p class="text-left">{{brand.price_sign}} {{brand.price | titlecase}}</p>
         </a>
-        <p class="text-left"><button class="btn shop-btn" [disabled]="brand.price < 1" (click)="addToCart(brand)">Add To Cart</button></p>
+        <p class="text-center"><button class="btn shop-btn" [disabled]="brand.price < 1" (click)="addToCart(brand)">Add To Cart</button></p>
       </div>
     </div>
   </div>  
