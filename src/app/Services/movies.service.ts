@@ -12,22 +12,22 @@ export class MoviesService {
   ) { }
 
   public getAllProducts(): Observable<any> {
-    const url = 'http://makeup-api.herokuapp.com/api/v1/products.json';
+    const url = 'https://makeup-api.herokuapp.com/api/v1/products.json';
     return this.http.get<any>(url)
   }
 
   public getProductType(name:string): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${name}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${name}`;
     return this.http.get<any>(url)
   }
 
   public getProductCategory(category:string): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_category=${category}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?product_category=${category}`;
     return this.http.get<any>(url)
   }
 
   public getProductBrand(brand:string): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`;
     return this.http.get<any>(url)
   }
   
@@ -37,26 +37,26 @@ export class MoviesService {
   }
 
   public getProductPriceGreaterThan(price:number): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=${price}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?price_greater_than=${price}`;
     return this.http.get<any>(url)
   }
 
   public getProductPriceLessThan(price:number): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?price_less_than=${price}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?price_less_than=${price}`;
     return this.http.get<any>(url)
   }
 
   public getProductRatingLessThan(rate:number): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?rating_less_than=${rate}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?rating_less_than=${rate}`;
     return this.http.get<any>(url)
   }
   public getProductRatingGreaterThan(rate:number): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=${rate}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=${rate}`;
     return this.http.get<any>(url)
   }
 
   public getProductByBrandAndProductType(brand:string,productType:string): Observable<any> {
-    const url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}&product_type=${productType}`;
+    const url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}&product_type=${productType}`;
     return this.http.get<any>(url)
   }
 
