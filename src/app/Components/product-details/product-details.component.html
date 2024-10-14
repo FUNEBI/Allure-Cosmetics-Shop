@@ -13,7 +13,7 @@
             <div class="container">
                 <h1 class="text-center">{{productDetails?.brand | titlecase}} {{productDetails?.name | titlecase}}</h1>
                 <div class="row">
-                    <div class="col-lg-7 col-md-4 col-sm-12 my-3 text-right">
+                    <div class="col-lg-6 col-md-6 col-sm-12 my-3 text-right">
                         <div class="product-details px-4 py-4">
                             <ng-container *ngIf="productDetails?.price < 1">
                                 <h4 style="color: red;">{{productDetails?.name | titlecase}} is currently out of stock</h4>
@@ -50,8 +50,8 @@
                         </div>    
                     </div>
     
-                    <div class="col-lg-5 col-md-4 col-sm-12 my-5 mx-2 text-center">
-                        <img src="{{productDetails?.api_featured_image}}" class="mt-5" style="height:400px!important;width:350px!important;" alt="{{productDetails?.name}}">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-2 mb-5 text-center">
+                        <img src="{{productDetails?.api_featured_image}}" class=" img-fluid mt-5" style="height:400px!important;width:350px!important;" alt="{{productDetails?.name}}">
                     </div>
                     
                 </div>
